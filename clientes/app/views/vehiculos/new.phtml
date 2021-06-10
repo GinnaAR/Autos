@@ -1,0 +1,48 @@
+<?php
+/**
+ * @var \Phalcon\Mvc\View\Engine\Php $this
+ */
+?>
+
+<div class="row">
+    <nav>
+        <ul class="pager">
+            <li class="previous"><?php echo $this->tag->linkTo(["vehiculos", "Go Back"]) ?></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="page-header">
+    <h1><center>Crear vehiculos</center></h1>
+</div>
+
+<?php echo $this->getContent(); ?>
+
+<form action="create" class="form-horizontal" method="post">
+    <div class="form-group">
+    <label for="fieldPlaca" class="col-sm-2 control-label">Placa</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["placa", "size" => 30, "class" => "form-control", "id" => "fieldPlaca"]); ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldMarca" class="col-sm-2 control-label">Marca</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["marca", "size" => 30, "class" => "form-control", "id" => "fieldMarca"]); ?>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="fieldModelo" class="col-sm-2 control-label">Modelo</label>
+    <div class="col-sm-10">
+        <?php echo $this->tag->textField(["modelo", "size" => 30, "class" => "form-control", "id" => "fieldModelo"]); ?>
+    </div>
+</div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <?php echo $this->tag->submitButton(["Save", "class" => "btn btn-success"]) ?>
+        </div>
+    </div>
+</form>
